@@ -37,7 +37,7 @@ class Timezones(commands.Cog):
 
     @cog_ext.cog_slash(
         description="Set your timezone. Enter your current time in `HH:MM` 24-hour format.",
-        guild_ids=guild_ids
+        # guild_ids=guild_ids
     )
     async def timezone(self, ctx: SlashContext, current_time: str):
         if not re.match("^[0-2]?[0-9]:[0-5]?[0-9]$", current_time):
@@ -58,7 +58,7 @@ class Timezones(commands.Cog):
 
     @cog_ext.cog_slash(
         description="Display a time. Enter a time in `HH:MM` 24-hour format.",
-        guild_ids=guild_ids
+        # guild_ids=guild_ids
     )
     async def time(self, ctx: SlashContext, time: str, message: str = "Time"):
         async with Database(self.bot.db_url) as db:
